@@ -16,11 +16,11 @@ int main(void)
 		{
 			if (n < u)
 			{
-				putchar((n/10) + 48);
-				putchar((n%10) + 48);
+				putchar((n / 10) + 48);
+				putchar((n % 10) + 48);
 				putchar(' ');
-				putchar((u/10) + 48);
-				putchar((u%10) + 48);
+				putchar((u / 10) + 48);
+				putchar((u % 10) + 48);
 				if (n != 98 || u != 99)
 				{
 					putchar(',');
