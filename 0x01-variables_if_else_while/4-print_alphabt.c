@@ -9,7 +9,7 @@ int main(void)
 {
 	int cha = 97;
 
-	while (97 < 123)
+	while (cha < 123)
 	{
 		if ((cha != 101) && (cha != 113))
 		{
