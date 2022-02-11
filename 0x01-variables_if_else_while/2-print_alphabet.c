@@ -10,7 +10,7 @@ int main(void)
 	int car = 97;
 	while (car < 123)
 	{
-		putchar(car)
+		putchar(car);
 		car++;
 	}
 	return (0);
