@@ -16,10 +16,7 @@ int main(void)
 			putchar(cha);
 			cha++;
 		}
-		else
-		{
-			cha++;
-		}
+		cha++;
 	}
 	putchar('\n');
 	return (0);
