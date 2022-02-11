@@ -20,5 +20,6 @@ int main(void)
 		putchar(cha2);
 		cha2++;
 	}
+	putchar('\n');
 	return (0);
 }
