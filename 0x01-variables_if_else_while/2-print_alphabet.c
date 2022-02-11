@@ -8,7 +8,7 @@
 int main(void)
 {
 	int car = 97;
-	while (car < 123) 
+	while ( car < 123 )
 	{
 		putchar(car);
 		car++;
