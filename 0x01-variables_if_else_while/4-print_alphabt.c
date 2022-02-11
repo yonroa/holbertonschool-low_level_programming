@@ -14,7 +14,6 @@ int main(void)
 		if ((cha != 101) && (cha != 113))
 		{
 			putchar(cha);
-			cha++;
 		}
 		cha++;
 	}
