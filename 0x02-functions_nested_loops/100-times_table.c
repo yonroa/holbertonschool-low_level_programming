@@ -18,9 +18,9 @@ void print_times_table(int n)
 			{
 				_putchar(44);
 				_putchar(' ');
+				_putchar(' ');
 				if ((n1 * n2) <= 9)
 				{
-					_putchar(' ');
 					_putchar(' ');
 					_putchar((n1 * n2) + 48);
 				}
