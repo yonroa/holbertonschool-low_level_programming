@@ -18,7 +18,6 @@ int main(void)
 			n2 += n1;
 		}
 	}
-	printf("%i", n2);
-	_putchar('\n');
+	printf("%i\n", n2);
 	return (0);
 }
