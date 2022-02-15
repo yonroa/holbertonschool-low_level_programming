@@ -10,7 +10,14 @@ void print_alphabet_x10(void)
 
 	while (u <= 10)
 	{
-		print_alphabet;
+		int n = 97;
+
+		while (n < 123)
+		{
+			_putchar(n);
+			n++;
+		}
+		_putchar('\n');
 		u++;
 	}
 }
