@@ -19,7 +19,7 @@ void print_times_table(int n)
 				{
 					_putchar((n1 * n2) + 48);
 				}
-				else if ((n1 * n2) <= 9 && n2 != 0)
+				else if ((n1 * n2) < 10 && n2 != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
