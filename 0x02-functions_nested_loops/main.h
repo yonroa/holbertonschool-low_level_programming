@@ -15,3 +15,14 @@ void print_alphabet(void)
 		n++;
 	}
 }
+
+void print_alphabet_x10(void)
+{
+	int u = 0;
+
+	while (u <= 10)
+	{
+		print_alphabet;
+		u++;
+	}
+}
