@@ -24,11 +24,16 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar((n1 * n2) + 48);
 				}
-				else
+				else if ((n1 * n2) => 10 && (n1 * n2) < 100)
 				{
 					_putchar(((n1 * n2) / 10) + 48);
 					_putchar(((n1 * n2) % 10) + 48);
 				}
+				else if ((n1 * n2) >= 100)
+				{
+					_putchar(((n1 * n2) / 100) + 48);
+					_putchar(((n1 * n2) / 10) + 48);
+					_putchar(((n1 * n2) % 10) + 48);
 			}
 			_putchar('\n');
 		}
