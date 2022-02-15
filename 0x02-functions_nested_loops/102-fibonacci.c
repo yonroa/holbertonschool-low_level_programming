@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (r != 50)
 		{
-			printf("%li", n1);
+			printf("%li, ", n1);
 		}
 		else
 		{
