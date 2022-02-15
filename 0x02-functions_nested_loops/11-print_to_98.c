@@ -35,7 +35,7 @@ void print_to_98(int n)
 	}
 	else
 	{
-		puts(98);
+		puts("98");
 	}
 	putchar('\n');
 }
