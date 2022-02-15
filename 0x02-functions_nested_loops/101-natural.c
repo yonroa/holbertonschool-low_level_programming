@@ -19,5 +19,6 @@ int main(void)
 		}
 	}
 	printf("%i", n2);
+	_putchar('\n');
 	return (0);
 }
