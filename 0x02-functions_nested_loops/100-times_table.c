@@ -32,8 +32,8 @@ void print_times_table(int n)
 				}
 				else if ((n1 * n2) >= 100)
 				{
-					_putchar(((n1 * n2) / 100) + 48);
-					_putchar(((n1 * n2) / 10) + 48);
+					_putchar((((n1 * n2) / 100) % 10) + 48);
+					_putchar((((n1 * n2) / 10) % 10) + 48);
 					_putchar(((n1 * n2) % 10) + 48);
 				}
 			}
