@@ -18,6 +18,7 @@ void print_to_98(int n)
 			}
 			n--;
 		}
+		putchar('\n');
 	}
 	else if (n < 98)
 	{
@@ -30,10 +31,10 @@ void print_to_98(int n)
 			}
 			n++;
 		}
+		putchar('\n');
 	}
 	else
 	{
 		puts("98");
 	}
-	putchar('\n');
 }
