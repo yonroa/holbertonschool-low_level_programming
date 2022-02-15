@@ -22,7 +22,8 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar((n1 * n2) + 48);
+				_putchar(((n1 * n2) / 10) + 48);
+				_putchar(((n1 * n2) % 10) + 48);
 			}
 		}
 	}
