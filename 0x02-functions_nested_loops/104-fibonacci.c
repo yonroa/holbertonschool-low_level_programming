@@ -8,25 +8,36 @@
  */
 int main(void)
 {
-	int r = 1;
+	int r;
 	unsigned long int n1 = 1;
 	unsigned long int n2 = 2;
 	unsigned long int n3;
+	unsigned long int u1;
+	unsigned long int u2;
+	unsigned long int u3;
+	unsigned long int u4;
 
-	while (r <= 98)
+	for (r = 1; r <= 91; r++)
 	{
-		if (r != 98)
-		{
-			printf("%li, ", n1);
-		}
-		else
-		{
-			printf("%li\n", n1);
-		}
+		printf("%li, ", n1);
 		n3 = n1 + n2;
 		n1 = n2;
 		n2 = n3;
-		r++;
 	}
+	u1 = n1 / 1000000000;
+	u2 = n1 % 1000000000;
+	u3 = n2 / 1000000000;
+	u4 = n2 % 1000000000;
+
+	for (r = 92; r <= 98; r++)
+	{
+		printf("%li, ", u3 + (u4 / 1000000000));
+		printf("%li", u4 % 1000000000);
+		u3 = u3 + u1;
+		u1 = u3 - u1;
+		u4 = u4 + u2;
+		u2 = u4 - u2;
+	}
+	putchar('\n');
 	return (0);
 }
