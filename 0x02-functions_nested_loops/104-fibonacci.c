@@ -9,9 +9,9 @@
 int main(void)
 {
 	int r = 1;
-	long int n1 = 1;
-	long int n2 = 2;
-	long int n3;
+	long long int n1 = 1;
+	long long int n2 = 2;
+	long long int n3;
 
 	while (r <= 98)
 	{
