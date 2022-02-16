@@ -11,7 +11,7 @@ int main(void)
 	int r;
 	unsigned long int n1 = 1;
 	unsigned long int n2 = 2;
-	unsigned long int n3, u1, u2, u3, u4;
+	unsigned long int u1, u2, u3, u4;
 
 	for (r = 1; r <= 91; r++)
 	{
