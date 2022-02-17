@@ -2,7 +2,7 @@
 
 /**
  * print_diagonal - print a '\' in diagonal
- * @c: number of '\'
+ * @n: number of '\'
  */
 
 void print_diagonal(int n)
