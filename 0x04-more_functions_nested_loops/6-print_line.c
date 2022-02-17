@@ -9,7 +9,13 @@ void print_line(int n)
 {
 	if (n > 0)
 	{
-		_putchar(95) * n;
+		int i = 1;
+
+		while (i <= n)
+		{
+			_putchar(95);
+			i++;
+		}
 		_putchar('\n');
 	}
 	else
