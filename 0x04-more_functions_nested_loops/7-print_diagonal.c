@@ -1,26 +1,32 @@
 #include "main.h"
 
+/**
+ * print_diagonal - print a '\' in diagonal
+ * @c: number of '\'
+ */
+
 void print_diagonal(int n)
 {
 	if (n > 0)
 	{
-		int i = 0;
+		int i;
 		int u;
 
-		while (i <= n)
+		for (i = 0; i <= n; i++)
 		{
-			for (u = 1; u < n; u++)
+			for (u = 0; u <= i; u++)
 			{
-				_putchar(' ');
-				if (u == n+1)
+				if (i == u)
 				{
 					_putchar('\\');
+					_putchar('\n');
+				}
+				else
+				{
+					_putchar(' ');
 				}
 			}
-			n++;
 		}
-		putchar('\n');
-
 	}
 	else
 	{
