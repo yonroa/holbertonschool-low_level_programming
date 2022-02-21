@@ -30,7 +30,7 @@ void puts_half(char *str)
 	{
 		int u = 0;
 
-		while (u <= i)
+		while (u <= i - 1)
 		{
 			if (u > ((i - 1) / 2))
 			{
