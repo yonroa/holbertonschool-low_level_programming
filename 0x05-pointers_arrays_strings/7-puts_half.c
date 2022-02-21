@@ -15,7 +15,7 @@ void puts_half(char *str)
 
 	if (i % 2 == 0)
 	{
-		int u = 0;
+		int u = 1;
 
 		while (u <= i - 1)
 		{
