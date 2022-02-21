@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - Update n to point to 98
- * @*n: Pointer to be updated
+ * @n: Pointer to be updated
  *
  * Return: n
  */
