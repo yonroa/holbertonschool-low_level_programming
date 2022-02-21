@@ -12,6 +12,7 @@ void puts_half(char *str)
 	{
 		i++;
 	}
+	i = i - 1;
 
 	if (i % 2 == 0)
 	{
@@ -40,5 +41,4 @@ void puts_half(char *str)
 		}
 	}
 	_putchar ('\n');
-}
-			
+}			
