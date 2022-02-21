@@ -29,11 +29,10 @@ void puts_half(char *str)
 	else
 	{
 		int u = 0;
-		i = i + 1;
 
 		while (u <= i)
 		{
-			if (u >= (i - 1) / 2)
+			if (u >= ((i - 1) / 2))
 			{
 				_putchar(str[u]);
 			}
