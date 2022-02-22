@@ -13,7 +13,7 @@ int _atoi(char *s)
 	int u = 0;
 	int cont = 0;
 	int number;
-	int sum = 0;
+	unsigned int sum = 0;
 
 	while (s[i] != '\0')
 	{
@@ -28,7 +28,7 @@ int _atoi(char *s)
 		if (s[u] >= '0' && s[u] <= '9')
 		{
 			number = s[u] - '0';
-			if (cont % 2 == 0)
+			if (cont % 2)
 			{
 				number = -number;
 			}
