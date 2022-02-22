@@ -37,7 +37,7 @@ int _atoi(char *s)
 				break;
 			}
 		}
-		i++;
+		u++;
 	}
 	if (sum == 0)
 	{
