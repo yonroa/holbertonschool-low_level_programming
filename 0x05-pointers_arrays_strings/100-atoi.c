@@ -3,6 +3,9 @@
 /**
  * _atoi - Print the numbers of the string
  * @s: String to be printed
+ *
+ * Return: 0 if the string don't have numbers
+ * sum if it does
  */
 int _atoi(char *s)
 {
@@ -27,7 +30,7 @@ int _atoi(char *s)
 			number = s[u] - '0';
 			if (cont % 2 == 0)
 			{
-				number = number * -1;
+				number = -number;
 			}
 
 			sum = (sum * 10) + number;
