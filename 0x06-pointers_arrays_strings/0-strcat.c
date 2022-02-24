@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * *_strcar - Concatenates two strings
+ * @dest: String 1
+ * @src: String 2
+ *
+ * Return: dest
+ */
 char *_strcat(char *dest, char *src)
 {
 	int i = 0;

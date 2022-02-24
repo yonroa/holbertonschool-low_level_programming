@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * *_strncat - Concatenates two strings until the byte n
+ * @dest: String 1
+ * @src: String 2
+ * @n: number of bytes
+ *
+ * Return: dest
+ */
 char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0;
