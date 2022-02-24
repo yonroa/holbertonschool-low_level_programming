@@ -22,13 +22,13 @@ int _strcmp(char *s1, char *s2)
 	{
 		u++;
 	}
-	if (i < u)
+	if (*s1 < *s2)
 	{
-		return (u[0] - s[0]);
+		return (-(*s2 - *s1));
 	}
-	else if (i > u)
+	else if (*s1 > *s2)
 	{
-		return (s[0] - u[0]);
+		return (*s1 - *s2);
 	}
 	else
 	{
