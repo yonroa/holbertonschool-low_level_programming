@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_number - Print the number n
+ * @n: Number to be prited
+ */
 void print_number(int n)
 {
 	unsigned int u;
