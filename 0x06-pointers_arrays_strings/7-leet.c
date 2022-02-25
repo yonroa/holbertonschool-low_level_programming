@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * *leet - Encode a string in lenguage 1337
+ * @s: String to be encoded
+ *
+ * Return s
+ */
 char *leet(char *s)
 {
 	int i;
