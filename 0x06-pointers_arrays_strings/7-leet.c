@@ -4,7 +4,7 @@
  * *leet - Encode a string in lenguage 1337
  * @s: String to be encoded
  *
- * Return s
+ * Return: s
  */
 char *leet(char *s)
 {
