@@ -24,6 +24,7 @@ char *_strchr(char *s, char c)
 		{
 			break;
 		}
+		j++;
 	}
 	return (&s[j]);
 }
