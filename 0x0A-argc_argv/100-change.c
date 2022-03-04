@@ -14,16 +14,22 @@ int _isdigit(char *c);
 int main(int argc, char *argv[])
 {
 	int num = 0;
-	int tot = atoi(argv[1]);
-
-	if (tot < 0)
-		printf("0\n");
+	int tot;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	tot = atoi(argv[1]);
+
+	if (tot < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+
 	while (tot >= 25)
 		tot -= 25, num++;
 	while (tot >= 10 && tot < 25)
