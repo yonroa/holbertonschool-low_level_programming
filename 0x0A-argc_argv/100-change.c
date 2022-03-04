@@ -22,16 +22,15 @@ int main(int argc, char *argv[])
 			while (sum < atoi(argv[1]))
 			{
 				if (sum + 25 <= atoi(argv[1]))
-					sum += 25;
+					sum += 25, num++;
 				else if (sum + 10 <= atoi(argv[1]))
-					sum += 10;
+					sum += 10, num++;
 				else if (sum + 5 <= atoi(argv[1]))
-					sum += 5;
+					sum += 5, num++;
 				else if (sum + 2 <= atoi(argv[1]))
-					sum += 2;
+					sum += 2, num++;
 				else if (sum + 1 <= atoi(argv[1]))
-					sum += 1;
-				num++;
+					sum += 1, num++;
 			}
 		}
 		else
