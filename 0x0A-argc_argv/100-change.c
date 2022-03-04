@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
 		tot -= 2, num++;
 	while (tot >= 1 && tot < 2)
 		tot -= 1, num++;
-	printf("%i\n", num);
+	printf("%d\n", num);
 	return (0);
 }
