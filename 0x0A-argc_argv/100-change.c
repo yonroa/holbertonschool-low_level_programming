@@ -13,52 +13,27 @@ int _isdigit(char *c);
  */
 int main(int argc, char *argv[])
 {
-	int num = 0, sum = 0;
+	int num = 0;
+	int tot = atoi(argv[1]);
 
-	if (argc == 2 && _isdigit(argv[1]) == 0)
-	{
-		if (atoi(argv[1]) > 0)
-		{
-			while (sum < atoi(argv[1]))
-			{
-				if (sum + 25 <= atoi(argv[1]))
-					sum += 25, num++;
-				else if (sum + 10 <= atoi(argv[1]))
-					sum += 10, num++;
-				else if (sum + 5 <= atoi(argv[1]))
-					sum += 5, num++;
-				else if (sum + 2 <= atoi(argv[1]))
-					sum += 2, num++;
-				else if (sum + 1 <= atoi(argv[1]))
-					sum += 1, num++;
-			}
-		}
-		else
-		{
-			printf("0\n");
-			return (0);
-		}
-	}
-	else
+	if (tot < 0)
+		printf("0\n");
+
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	while (tot >= 25)
+		tot -= 25, num++;
+	while (tot >= 10 && tot < 25)
+		tot -= 10, num++;
+	while (tot >= 5 && tot < 10)
+		tot -= 5, num++;
+	while (tot >= 2 && tot < 5)
+		tot -= 2, num++;
+	while (tot >= 1 && tot < 2)
+		tot -= 1, num++;
 	printf("%i\n", num);
 	return (0);
-}
-
-/**
- * _isdigit - Verify if c is a digit
- *  @c: Character to be verified
- *  Return: 1 if c is not a digit
- *  0 if is
- */
-int _isdigit(char *c)
-{
-	if (!c || !*c)
-		return (0);
-	if (!isdigit(*c) && *c != '-')
-		return (1);
-	return (_isdigit(c + 1));
 }
