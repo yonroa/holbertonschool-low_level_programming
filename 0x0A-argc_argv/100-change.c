@@ -59,7 +59,7 @@ int _isdigit(char *c)
 {
 	if (!c || !*c)
 		return (0);
-	if (!isdigit(*c))
+	if (!isdigit(*c) && *c != '-')
 		return (1);
 	return (_isdigit(c + 1));
 }
