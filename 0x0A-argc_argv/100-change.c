@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 {
 	int num = 0, sum = 0;
 
-	if (argc == 2)
+	if (argc == 2 && _isdigit(argv[1]) == 0)
 	{
-		if (_isdigit(argv[1]) >= 0)
+		if (atoi(argv[1]) > 0)
 		{
 			while (sum < atoi(argv[1]))
 			{
@@ -50,17 +50,16 @@ int main(int argc, char *argv[])
 }
 
 /**
- *  * _isdigit - Verify if c is a digit
- *   * @c: Character to be verified
- *    *
- *     * Return: -1 if c is not a digit
- *      * 0 if is
- *       */
+ * _isdigit - Verify if c is a digit
+ *  @c: Character to be verified
+ *  Return: 1 if c is not a digit
+ *  0 if is
+ */
 int _isdigit(char *c)
 {
 	if (!c || !*c)
 		return (0);
 	if (!isdigit(*c))
-		return (-1);
+		return (1);
 	return (_isdigit(c + 1));
 }
