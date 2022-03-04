@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
+int _isdigit(char *c);
 /**
  * main - prints the minimum number of coins to
  * make change for an amount of money
@@ -15,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
-		if (atoi(argv[1]) >= 0)
+		if (_isdigit(argv[1]) >= 0)
 		{
 			while (sum < atoi(argv[1]))
 			{
@@ -45,4 +47,20 @@ int main(int argc, char *argv[])
 	}
 	printf("%i\n", num);
 	return (0);
+}
+
+/**
+ *  * _isdigit - Verify if c is a digit
+ *   * @c: Character to be verified
+ *    *
+ *     * Return: -1 if c is not a digit
+ *      * 0 if is
+ *       */
+int _isdigit(char *c)
+{
+	if (!c || !*c)
+		return (0);
+	if (!isdigit(*c))
+		return (-1);
+	return (_isdigit(c + 1));
 }
