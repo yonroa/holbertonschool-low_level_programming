@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+int _isdigit(char *c);
 /**
  * main - Adds positive numbers
  * @argc: Length of argv
@@ -12,14 +13,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, num;
 	int sum = 0;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(*argv[i]))
+			num = _isdigit(argv[i]);
+			if (num == -1)
 			{
 				printf("Error\n");
 				return (1);
@@ -32,4 +34,20 @@ int main(int argc, char *argv[])
 		printf("0\n");
 
 	return (0);
+}
+
+/**
+ * _isdigit - Verify if c is a digit
+ * @c: Character to be verified
+ *
+ * Return: -1 if c is not a digit
+ * 0 if is
+ */
+int _isdigit(char *c)
+{
+	if (!c || !*c)
+		return (0);
+	if (!isdigit(*c))
+		return (-1);
+	return (_isdigit(c + 1));
 }
