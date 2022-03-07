@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * *_strdup - Copy a string in dynamic memory
@@ -10,18 +9,22 @@
  */
 char *_strdup(char *str)
 {
-	unsigned long int i;
+	int i;
 	char *str2;
+	int j = 0;
 
 	if (str == NULL)
 		return (NULL);
 
-	str2 = malloc(sizeof(char) * (strlen(str) - 1));
+	while (str[j] != '\0')
+		j++;
+
+	str2 = malloc(sizeof(char) * j);
 
 	if (str2 == NULL)
 		return (NULL);
 
-	for (i = 0; i < strlen(str); i++)
+	for (i = 0; i < j; i++)
 	{
 		str2[i] = str[i];
 	}
