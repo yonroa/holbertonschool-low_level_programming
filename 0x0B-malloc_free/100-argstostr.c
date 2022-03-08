@@ -17,7 +17,6 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	str = malloc(sizeof(av) * ac);
 	sum = 0;
 
 	for (i = 0; i < ac; i++)
@@ -29,6 +28,8 @@ char *argstostr(int ac, char **av)
 		sum++;
 	}
 	sum++;
+
+	str = malloc(sizeof(char) * sum);
 
 	for (i = 0; i < ac; i++)
 	{
