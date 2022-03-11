@@ -17,7 +17,7 @@ int *array_range(int min, int max)
 
 	str = malloc(sizeof(int) * ((max - min) + 1));
 
-	while (min < max)
+	while (min <= max)
 	{
 		str[i] = min;
 		i++;
