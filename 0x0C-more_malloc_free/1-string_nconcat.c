@@ -25,10 +25,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[i] != '\0')
 		i++;
 
-	while (s2[j] != '\0' && j <= n)
+	while (s2[j] != '\0' && j < n)
 		j++;
 
-	s3 = malloc((sizeof(char) * i) + (sizeof(char) * j));
+	s3 = malloc((sizeof(char) * (i - 1)) + (sizeof(char) * j));
 	if (s3 == NULL)
 		return (NULL);
 	for (h = 0; h < i; h++)
