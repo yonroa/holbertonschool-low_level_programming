@@ -20,7 +20,7 @@ int *array_range(int min, int max)
 	if (str == NULL)
 		return (NULL);
 
-	while (min <= max && i < ((max - min) + 1))
+	while (min <= max)
 	{
 		str[i] = min;
 		i++;
