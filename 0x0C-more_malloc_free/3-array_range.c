@@ -17,6 +17,9 @@ int *array_range(int min, int max)
 
 	str = malloc(sizeof(int) * ((max - min) + 1));
 
+	if (str == NULL)
+		return (NULL);
+
 	while (min <= max && i < ((max - min) + 1))
 	{
 		str[i] = min;
