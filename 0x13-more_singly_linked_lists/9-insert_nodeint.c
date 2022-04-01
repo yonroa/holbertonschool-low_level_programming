@@ -26,7 +26,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (new);
 	}
 	while (copy)
-	{	
+	{
 		if ((idx - 1) == index)
 		{
 			new->next = copy->next;
