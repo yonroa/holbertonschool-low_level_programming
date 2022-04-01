@@ -8,13 +8,14 @@
  */
 int pop_listint(listint_t **head)
 {
-	listint_t *copy = (*head)->next;
+	listint_t *copy;
 	int s;
 
 	if (!head || !*head)
 		s = 0;
 	else
 		s = (*head)->n;
+	copy = (*head)->next;
 	free(*head);
 	*head = copy;
 	return (s);
