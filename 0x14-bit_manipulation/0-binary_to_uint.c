@@ -8,7 +8,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i, digit, num, position = 0;
+	int i;
 	unsigned int UnsInt = 0;
 	int len = strlen(b);
 
@@ -18,15 +18,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] != '1' && b[i] != '0')
 			return (0);
-	}
-	num = atoi(b);
-	while (num > 0)
-	{
-		digit = num % 10;
-		if (digit == 1)
-			UnsInt = UnsInt + (1 << position);
-		position++;
-		num = num / 10;
+		UnsInt = (UnsInt * 2) + (b[i] - '0');
 	}
 	return (UnsInt);
 }
