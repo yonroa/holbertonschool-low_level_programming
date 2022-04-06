@@ -27,9 +27,11 @@ int main(int ac, char **av)
 	if (path > 0)
 	{
 		if (file2 == -1 || write(file2, buffer, path) != path)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		close(file2);
-		exit(99);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			close(file2);
+			exit(99);
+		}
 	}
 	if (path == -1)
 	{
