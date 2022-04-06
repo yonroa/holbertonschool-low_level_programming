@@ -34,6 +34,7 @@ int main(int ac, char **av)
 	if (file2 == -1 || destiny == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		close(file2);
 		exit(99);
 	}
 	end2 = close(file2);
