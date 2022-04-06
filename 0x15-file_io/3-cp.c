@@ -9,7 +9,7 @@
 int main(int ac, char **av)
 {
 	int file, file2, path, destiny, end, end2;
-	char buffer[BUFSIZ];
+	char buffer[1024];
 
 	if (ac != 3)
 	{
