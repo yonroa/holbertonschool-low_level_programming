@@ -33,15 +33,13 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	end = close(file);
-	if (end == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file);
-		exit(100);
-	}
 	end2 = close(file2);
-	if (end2 == -1)
+	if (end == -1 || end2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file2);
+		if (end == -1)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file);
+		if (end2 == -1)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file2);
 		exit(100);
 	}
 	return (0);
