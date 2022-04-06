@@ -23,12 +23,6 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	path = read(file, buffer, BUFSIZ);
-	if (path == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		close(file);
-		exit(98);
-	}
 	file2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (path > 0)
 	{
@@ -37,10 +31,9 @@ int main(int ac, char **av)
 		close(file2);
 		exit(99);
 	}
-	else
+	if (path == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		close(file);
 		exit(98);
 	}
 	end = close(file);
