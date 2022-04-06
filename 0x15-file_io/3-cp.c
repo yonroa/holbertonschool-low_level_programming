@@ -29,7 +29,6 @@ int main(int ac, char **av)
 		if (file2 == -1 || write(file2, buffer, path) != path)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-			close(file2);
 			exit(99);
 		}
 	}
