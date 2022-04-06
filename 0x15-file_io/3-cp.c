@@ -9,7 +9,7 @@
 int main(int ac, char **av)
 {
 	int file, file2, path, destiny, end, end2;
-	char buffer[1024];
+	char buffer[BUFSIZ];
 
 	if (ac != 3)
 	{
@@ -24,12 +24,6 @@ int main(int ac, char **av)
 		close(file);
 		exit(98);
 	}
-	end = close(file);
-	if (end == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file);
-		exit(100);
-	}
 	file2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	destiny = write(file2, buffer, path);
 	if (file2 == -1 || destiny == -1)
@@ -37,6 +31,12 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		close(file2);
 		exit(99);
+	}
+	end = close(file);
+	if (end == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file);
+		exit(100);
 	}
 	end2 = close(file2);
 	if (end2 == -1)
