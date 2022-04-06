@@ -17,8 +17,13 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	file = open(av[1], O_RDONLY);
+	if (file == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	path = read(file, buffer, BUFSIZ);
-	if (file == -1 || path == -1)
+	if (path == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		close(file);
@@ -44,4 +49,3 @@ int main(int ac, char **av)
 	}
 	return (0);
 }
-
