@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	int file, file2, path, destiny, end, end2;
+	int file, file2, path, end, end2;
 	char buffer[BUFSIZ];
 
 	if (ac != 3)
@@ -30,12 +30,18 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	file2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	destiny = write(file2, buffer, path);
-	if (file2 == -1 || destiny == -1)
+	if (path > 0)
 	{
+		if (file2 == -1 || write(file2, buffer, path) != path)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		close(file2);
 		exit(99);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		close(file);
+		exit(98);
 	}
 	end = close(file);
 	end2 = close(file2);
