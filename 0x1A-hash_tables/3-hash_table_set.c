@@ -5,18 +5,18 @@
  * @ht: the hash table
  * @key: string to be key
  * @value: value for the key
- * 
+ *
  * Return: 1 if all is ok, 0 if something is wrong
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int idx = 0;
+	unsigned long int idx = 0;
 	hash_node_t *node = NULL;
 
-    if (!ht || !key || !value || strcmp(key, "") == 0)
-        return (0);
+	if (!ht || !key || !value || strcmp(key, "") == 0)
+		return (0);
 
-    idx = key_index((unsigned char *)key, ht->size);
+	idx = key_index((unsigned char *)key, ht->size);
 	node = ht->array[idx];
 	while (node)
 	{
@@ -28,21 +28,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		node = node->next;
 	}
-    add_hash_node(&ht->array[idx], key, value);
+	add_node(&ht->array[idx], key, value);
 	if (!ht->array[idx])
 		return (0);
 	return (1);
 }
 
 /**
- * add_hash_node - add a node to the hash table
+ * add_node - add a node to the hash table
  * @head: first node in the index of the hash table
  * @key: key for the new node
  * @value: value for the key
- * 
+ *
  * Return: The new node, NULL if something is wrong
  */
-hash_node_t *add_hash_node(hash_node_t **head, const char *key, const char *value)
+hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
 	hash_node_t *new = NULL;
 
