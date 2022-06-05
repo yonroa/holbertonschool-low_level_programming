@@ -28,7 +28,7 @@ void hash_table_print(const hash_table_t *ht)
 			node = node->next;
 		}
 		if (ht->array[idx] != last_print && ht->array[idx])
-				printf(", ");
+			printf(", ");
 		idx++;
 	}
 	printf("}\n");
