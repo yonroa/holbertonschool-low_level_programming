@@ -1,37 +1,53 @@
 #include "hash_tables.h"
 
 /**
+ * print_list - prints all the elements of a linked list
+ * @h: pointer to the hash_node_t list to print
+ */
+void print_list(hash_node_t *h)
+{
+	while (h)
+	{
+		printf("'%s': '%s'", h->key, h->value);
+		if (h->next)
+			printf(", ");
+		h = h->next;
+	}
+}
+
+/**
  * hash_table_print - prints a hash table
- * @ht: the hash table
+ * @ht: hash table to print
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned int idx = 0, i, l_idx = 0;
-	hash_node_t *node = NULL, *last_print = NULL;
+	unsigned long int i;
+	hash_node_t *node = NULL;
+	char *last_key = NULL;
+	unsigned long int index;
 
 	if (!ht)
 		return;
+
 	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i])
-			last_print = ht->array[i];
+		if (ht->array[i] != NULL)
+			node = ht->array[i];
 	}
-	if (last_print != NULL)
-		l_idx = key_index((const unsigned char *)last_print->key, ht->size);
+
 	printf("{");
-	while (idx <= ht->size)
+
+	if (node)
 	{
-		node = ht->array[idx];
-		while (node)
+		last_key = node->key;
+		index = key_index((const unsigned char *)last_key, ht->size);
+		for (i = 0; i < ht->size; i++)
 		{
-			printf("'%s': '%s'", node->key, node->value);
-			if (node->next)
-				printf(", ");
-			node = node->next;
-			if (ht->array[idx] != last_print && idx < l_idx)
+			print_list(ht->array[i]);
+			if (ht->array[i] && i < index)
 				printf(", ");
 		}
-		idx++;
 	}
+
 	printf("}\n");
 }
