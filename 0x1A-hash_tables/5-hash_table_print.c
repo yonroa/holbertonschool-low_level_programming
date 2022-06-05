@@ -26,9 +26,9 @@ void hash_table_print(const hash_table_t *ht)
 			if (node->next)
 				printf(", ");
 			node = node->next;
-			if (ht->array[idx] != last_print)
-				printf(", ");
 		}
+		if (ht->array[idx] != last_print && ht->array[idx])
+				printf(", ");
 		idx++;
 	}
 	printf("}\n");
