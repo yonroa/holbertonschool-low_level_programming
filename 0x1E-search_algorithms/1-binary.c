@@ -10,20 +10,20 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i = 0;
+	size_t i = 0, R = size - 1;
 	int index, size_print = size;
 
 	if (!array || size == 0)
 		return (-1);
-	while (i <= size - 1)
+	while (i <= R)
 	{
 		print_array(array, i, size_print);
-		index = (i + size - 1) / 2;
+		index = ((R - i) / 2) + i;
 		if (array[index] < value)
 			i = index + 1;
 		else if (array[index] > value)
 		{
-			size = index - 1;
+			R = index - 1;
 			size_print = index;
 		}
 		else
